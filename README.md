@@ -59,3 +59,9 @@ After **8 cards**, the round ends and a new metro line begins.
 
 Batmunkh Enkhbold  
 ELTE – Web Programming Course
+
+<img width="2272" height="973" alt="image" src="https://github.com/user-attachments/assets/d5ae464e-9c5b-4351-b195-6b4cfab600ac" />
+<img width="1910" height="995" alt="image" src="https://github.com/user-attachments/assets/fac55bea-460d-48bb-a6f6-d5cb1279ea6f" />
+
+
+
