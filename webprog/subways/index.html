@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Subways of Budapest</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="screen" id="menu-screen">
+    <h1>Subways of Budapest</h1>
+
+    <section class="menu-panel">
+      <label>
+        Player name:
+        <input type="text" id="player-name-input" placeholder="Your name" />
+      </label>
+
+      <button id="start-btn">Start game</button>
+    </section>
+
+    <section class="rules-panel" id="rules-panel">
+      <h2>How to play (short)</h2>
+      <p>
+        Press <strong>Start game</strong>, then:
+      </p>
+      <ul>
+  <li>Click <strong>Draw card</strong> to reveal a station card.</li>
+  <li>
+    Click one station, then click another station to try to
+    draw a segment for the current metro line.
+  </li>
+  <li>
+    You may draw at most one segment per card. You may also press
+    <strong>Skip</strong> to draw the next card without drawing.
+  </li>
+  <li>
+    Segments must be straight (horizontal, vertical, or 45° diagonal),
+    start from a current endpoint of this line, and end at a station
+    that matches the card (or Deák tér / Joker).
+  </li>
+  <li>
+    Segments cannot pass through other stations, cannot cross
+    other segments in open space, and a line cannot visit the same
+    station twice.
+  </li>
+  <li>
+    After the 8th card in a round, the next draw starts the next line.
+  </li>
+</ul>
+
+      <p>You can extend this with scoring, switch card, abilities, etc.</p>
+    </section>
+  </main>
+
+  <main class="screen hidden" id="game-screen">
+    <header class="game-header">
+      <div>
+        Player: <span id="player-name-label"></span>
+      </div>
+      <div>
+        Time: <span id="timer-label">0:00</span>
+      </div>
+      <div>
+        Current line: <span id="line-label"></span>
+      </div>
+      <div>
+        Round: <span id="round-label"></span> / 4
+      </div>
+    </header>
+
+    <section class="game-main">
+      <div class="board-wrapper">
+        <div id="grid-container"></div>
+        <canvas id="line-canvas"></canvas>
+      </div>
+
+      <aside class="side-panel">
+        <section class="card-panel">
+          <h2>Station card</h2>
+          <div id="card-display" class="card-display">
+            <span id="card-text">No card</span>
+          </div>
+          <div class="card-buttons">
+            <button id="draw-card-btn">Draw card</button>
+            <button id="skip-card-btn">Skip (no segment)</button>
+          </div>
+          <p class="info" id="turn-info"></p>
+        </section>
+
+        <section class="round-panel">
+          <h2>Round status</h2>
+          <p>Cards drawn this round: <span id="cards-count-label">0</span> / 8</p>
+          <p id="round-status-label"></p>
+
+          <h3>Train bonus</h3>
+          <p>Train hits: <span id="train-hits-label">0</span></p>
+          <p>Train points (PP): <span id="train-points-label">0</span></p>
+          <input
+            id="train-slider"
+            type="range"
+            min="0"
+            max="10"
+            value="0"
+            disabled
+          />
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
+
+
+
+
+
+
